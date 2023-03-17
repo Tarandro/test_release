@@ -29,5 +29,7 @@ jobs:
         run: ls C:\Users\runneradmin\AppData\Roaming\Python\Scripts
       - name: Verify Poetry installation
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
+      - name: Install dependencies
+        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --no-dev
       - name: End workflow
         run: exit 0
