@@ -38,5 +38,23 @@ jobs:
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
       - name: Install dependencies
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --no-dev
-      - name: End workflow
-        run: exit 0
+      - name: Build executable
+        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry run pyinstaller .\main.spec
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Release artifacts
+          path: |
+            app/resources/
+            app/config/
+      - name: Create release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+          body: |
+            Release ${{ github.ref }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
