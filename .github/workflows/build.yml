@@ -26,6 +26,6 @@ jobs:
           $env:PATH += ';C:\Users\runneradmin\AppData\Roaming\Python\Scripts'; setx PATH $env:PATH
         shell: powershell
       - name: Verify Poetry installation
-        run: poetry --version
+        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
       - name: End workflow
         run: exit 0
