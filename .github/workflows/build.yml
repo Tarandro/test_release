@@ -25,6 +25,8 @@ jobs:
         run: |
           $env:PATH += ';C:\Users\runneradmin\AppData\Roaming\Python\Scripts'; setx PATH $env:PATH
         shell: powershell
+      - name: Clear Poetry cache
+        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry cache clear
       - name: Cache dependencies
         uses: actions/cache@v2
         with:
