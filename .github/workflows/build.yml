@@ -27,14 +27,12 @@ jobs:
         shell: powershell
       - name: Clear Poetry cache
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry cache clear --all pypi
-      - name: Verify directory
-        run: ls C:\Users\runneradmin\AppData\Roaming\Python\Scripts
+      - name: Downgrade Poetry 1.3.2
+        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry self update 1.3.2
       - name: Verify Poetry installation
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
       - name: Install dependencies
-        run: |
-          C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --only main
-          poetry add great-expectations@0.15.49 --without-debugpy
+        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --only main
       - name: Build executable
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry run pyinstaller .\main.spec
       - name: Move executable
