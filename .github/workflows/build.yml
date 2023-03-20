@@ -18,19 +18,19 @@ jobs:
         with:
           python-version: 3.8.10
       - name: Install Poetry
-        run: curl -sSL https://install.python-poetry.org | python3 - --version 1.4.0
+        run: pip install poetry==1.4.0
       - name: Set Poetry in PATH and persist changes
         run: |
           $env:PATH += ';C:\Users\runneradmin\AppData\Roaming\Python\Scripts'; setx PATH $env:PATH
         shell: powershell
       - name: Clear Poetry cache
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry cache clear --all pypi
+        run: poetry cache clear --all pypi
       - name: Verify Poetry installation
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
+        run: poetry --version
       - name: Install dependencies
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --only main
+        run: poetry install --no-root --only main
       - name: Build executable
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry run pyinstaller .\main.spec
+        run: poetry run pyinstaller .\main.spec
       - name: Move executable
         run: move .\dist\main.exe .\main.exe
       - name: Upload artifacts
