@@ -18,6 +18,7 @@ pytest = "^7.2.0"
 pyspark = "^3.3.1"
 great-expectations = "^0.15.42"
 pyinstaller ="^5.9.0"
+debugpy = "^1.4.1"
 
 
 [build-system]
