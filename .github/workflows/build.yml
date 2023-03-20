@@ -26,7 +26,7 @@ jobs:
           $env:PATH += ';C:\Users\runneradmin\AppData\Roaming\Python\Scripts'; setx PATH $env:PATH
         shell: powershell
       - name: Clear Poetry cache
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry cache clear . --all
+        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry cache clear --all pypi
       - name: Verify directory
         run: ls C:\Users\runneradmin\AppData\Roaming\Python\Scripts
       - name: Verify Poetry installation
