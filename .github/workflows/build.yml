@@ -18,9 +18,7 @@ jobs:
         with:
           python-version: 3.8.10
       - name: Install Poetry
-        run: |
-          (Invoke-WebRequest -Uri https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py -UseBasicParsing).Content | python -
-        shell: powershell
+        run: curl -sSL https://install.python-poetry.org | POETRY_VERSION=1.3.2 python3 -
       - name: Set Poetry in PATH and persist changes
         run: |
           $env:PATH += ';C:\Users\runneradmin\AppData\Roaming\Python\Scripts'; setx PATH $env:PATH
