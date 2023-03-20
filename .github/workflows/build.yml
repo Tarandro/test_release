@@ -32,7 +32,9 @@ jobs:
       - name: Verify Poetry installation
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
       - name: Install dependencies
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --no-dev
+        run: |
+          C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry cache clear debugpy && C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry add debugpy
+          C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --no-dev
       - name: Build executable
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry run pyinstaller .\main.spec
       - name: Move executable
