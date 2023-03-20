@@ -7,6 +7,7 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "3.8.10"
+jupyter = "^1.0.0"
 pandas = "^1.5.2"
 pandas-profiling = "^3.5.0"
 deepdiff = "^6.2.1"
@@ -16,6 +17,7 @@ chardet = "^5.1.0"
 SQLAlchemy = "^1.4.45"
 pytest = "^7.2.0"
 pyspark = "^3.3.1"
+great-expectations = "^0.15.42"
 pyinstaller ="^5.9.0"
 
 [tool.poetry.group.dev.dependencies]
