@@ -32,9 +32,9 @@ jobs:
       - name: Verify Poetry installation
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
       - name: See Poetry cache
-        run: ls C:\Users\USERNAME\AppData\Local\pypoetry\Cache
+        run: ls C:\Users\runneradmin\AppData\Local\pypoetry\Cache
       - name: Remove Poetry cache
-        run: rm -rf C:\Users\USERNAME\AppData\Local\pypoetry\Cache
+        run: rm -rf C:\Users\runneradmin\AppData\Local\pypoetry\Cache
       - name: Install dependencies
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --only main
       - name: Build executable
