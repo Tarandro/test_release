@@ -32,7 +32,9 @@ jobs:
       - name: Verify Poetry installation
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
       - name: Install dependencies
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --no-dev --only main
+        run: |
+          C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --only main
+          poetry add great-expectations@0.15.49 --without-debugpy
       - name: Build executable
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry run pyinstaller .\main.spec
       - name: Move executable
