@@ -27,13 +27,6 @@ jobs:
         shell: powershell
       - name: Clear Poetry cache
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry cache clear . --all
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: ~/.cache/pypoetry/virtualenvs
-          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-poetry-
       - name: Verify directory
         run: ls C:\Users\runneradmin\AppData\Roaming\Python\Scripts
       - name: Verify Poetry installation

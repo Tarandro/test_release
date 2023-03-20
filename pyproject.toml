@@ -8,6 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "3.8.10"
 PyQt6 = "^6.4.0"
+jupyter = "^1.0.0"
 pandas = "^1.5.2"
 pandas-profiling = "^3.5.0"
 deepdiff = "^6.2.1"
