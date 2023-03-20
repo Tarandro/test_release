@@ -31,8 +31,6 @@ jobs:
         run: ls C:\Users\runneradmin\AppData\Roaming\Python\Scripts
       - name: Verify Poetry installation
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry --version
-      - name: Extra debugpy
-        run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry add --extras debugpy
       - name: Install dependencies
         run: C:\Users\runneradmin\AppData\Roaming\Python\Scripts\poetry install --no-root --no-dev --only main
       - name: Build executable
